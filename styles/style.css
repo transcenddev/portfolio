@@ -31,6 +31,7 @@ span {
 
 h2 {
   font-size: 2rem;
+  padding: 1rem;
 }
 
 a {
@@ -44,14 +45,12 @@ body {
   line-height: 1.5;
   height: 100vh;
   margin: 0;
-
 }
 
 #navbar {
   z-index: 999;
   display: flex;
   width: 100vw;
-
   position: fixed;
   top: 0;
   width: 100%;
@@ -63,7 +62,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1em;
-  /* border: 1px solid var(--border-color); */
 }
 
 #nav-logo-section {
@@ -104,13 +102,13 @@ body {
   height: 100%;
 }
 
-.welcome-section {
+.hero-section {
   display: grid;
   place-items: center;
   width: min(1000px, 100% - 3rem);
 }
 
-.welcome-section .welcome-title {
+.hero-section .hero-title {
   font-size: 1rem;
 }
 
@@ -151,16 +149,12 @@ body {
   }
 }
 
-
 /* Projects */
-
-.project-section {}
 
 .project-section-header {
   text-align: center;
   margin-bottom: 2em;
 }
-
 
 .project-grid {
   display: grid;
@@ -245,9 +239,15 @@ body {
   backdrop-filter: blur(8px);
 }
 
+/* Remove some style in Firefox */
+@-moz-document url-prefix() {
+  .project .project-text {
+    display: none;
+  }
+}
+
 .project:hover {
   opacity: 0.8;
-
 }
 
 @media (min-width: 30em) {
@@ -272,8 +272,7 @@ body {
   }
 }
 
-
-/*  */
+/* Certificate */
 
 .certificate-title {
   display: flex;
@@ -290,6 +289,8 @@ body {
   width: min(100vw - 10rem);
 }
 
+
+
 .certificate-grid {
   display: grid;
   grid-auto-flow: column;
@@ -300,7 +301,7 @@ body {
 }
 
 .certificate-grid::-webkit-scrollbar {
-  height: 0.75rem;
+  height: 0.30rem;
 }
 
 .certificate-grid::-webkit-scrollbar-track {
@@ -318,9 +319,7 @@ body {
   padding: 2rem;
   background-color: #111;
   color: #fff;
-  overflow-x: auto;
 }
-
 
 .certificate-title {
   font-size: 1.2rem;
@@ -338,4 +337,38 @@ body {
   font-size: x-small;
   font-weight: 100;
   padding: 1rem;
+}
+
+@media (max-width: 40rem) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .certificate {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .certificate-grid {
+    display: grid;
+    grid-auto-flow: row;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .certificate-section {
+    width: min(100vw - 3rem);
+  }
+
+  .certificate-grid::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+
+  .certificate-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
+  }
+
+
 }

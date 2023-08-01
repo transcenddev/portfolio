@@ -250,7 +250,7 @@ body {
   opacity: 0.8;
 }
 
-@media (min-width: 30em) {
+@media (min-width: 30rem) {
   .project-grid {
     grid-template-areas:
       'one one'
@@ -261,7 +261,7 @@ body {
   }
 }
 
-@media (min-width: 50em) {
+@media (min-width: 50rem) {
   .project-grid {
     grid-template-areas:
       'one one five five'
@@ -271,6 +271,8 @@ body {
     ;
   }
 }
+
+@media (max-width: 500px) {}
 
 /* Certificate */
 
@@ -339,10 +341,20 @@ body {
   padding: 1rem;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 60rem) {
   h2 {
     font-size: 1.5rem;
   }
+
+  .project>a>img {
+    width: 100%;
+  }
+
+  .project .project-text {
+    font-size: 1rem;
+    top: -1rem;
+  }
+
 
   .certificate {
     font-size: 1rem;
@@ -369,6 +381,7 @@ body {
     align-items: flex-start;
     gap: 0rem;
   }
+
 
 
 }

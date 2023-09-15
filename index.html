@@ -11,11 +11,10 @@
     <meta name="author" content="Reymar" />
     <title>Reymar</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="./styles/mouse-effect.css" />
-    <script src="./scripts/main.js" defer></script>
+    <link rel="stylesheet" href="./styles/main.css" />
     <!-- JS -->
-    <link rel="stylesheet" href="./scripts/main.js" defer />
+    <script src="./scripts/nav.js" defer></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +29,68 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar">
+    <header class="primary-header flex">
+      <div class="logo">
+        <a href="#"><i class="fa-solid fa-eye"></i></a>
+      </div>
+
+      <button
+        class="hamburger"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        for="mobile-nav-toggle"
+      >
+        <input type="checkbox" id="mobile-nav-toggle" />
+        <span class="sr-only">Menu</span>
+        <!-- Add id attribute -->
+        <svg viewBox="0 0 32 32">
+          <path
+            class="line line-top-bottom"
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+          ></path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </button>
+
+      <!-- <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button> -->
+
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
+          <li class="active">
+            <a href="index.html"> HOME </a>
+          </li>
+          <li>
+            <a href="about.html"> ABOUT </a>
+          </li>
+          <li>
+            <a href="work.html"> WORK </a>
+          </li>
+          <li id="nav-social-section" class="nav-social-section flex">
+            <a href="https://www.youtube.com/channel/UChXTp71pjigJLbScNF9YO1A"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/reymar-mirante-44b2b41b9/"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="https://github.com/r3kashi"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- <nav class="navbar">
       <div id="nav-logo-section" class="nav-section">
         <a href="#"><i class="fa-solid fa-eye"></i></a>
       </div>
@@ -51,7 +111,7 @@
           ><i class="fa-brands fa-github"></i
         ></a>
       </div>
-    </nav>
+    </nav> -->
     <main id="main" class="main-content">
       <section id="home" class="section-home">
         <h1 class="home-title line-1 anim-typewriter">Less is more.</h1>

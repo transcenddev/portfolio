@@ -1,6 +1,8 @@
 :root {
   --ff-base: 'Outfit', sans-serif;
   --border-color: rgba(255, 255, 255, 0.1);
+
+  --gap: 1rem;  
 }
 
 * {
@@ -47,6 +49,177 @@ body {
   margin: 0;
 }
 
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+/* screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hamburger {
+  display: none;
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.primary-header a {
+  transition: all 350ms ease-in-out;
+}
+
+.primary-header a:hover{
+  opacity: 0.7;
+}
+
+.logo a i{
+  font-size: 1rem;
+  position: fixed;
+  z-index: 9999;
+  top: 3rem;
+  left: 3rem;
+  aspect-ratio: 1;
+}
+
+.primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5rem;
+}
+
+
+
+.primary-navigation>li>a {
+  font-size: 0.8rem;
+}
+
+.nav-social-section {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-social-section>a>i {
+  font-size: 0.7rem;
+
+}
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+
+    transform: translateX(100%);
+    transition: all 350ms ease-out;
+  }
+
+  @supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {
+      background: hsl(0 0% 100% / 0.1);
+      backdrop-filter: blur(1rem);
+    }
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translate(0%);
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 1;
+    border: 0;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .hamburger input {
+    display: none;
+  }
+
+  .hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+
+  /* testr */
+
+  .active .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+
+  .active svg {
+    transform: rotate(-45deg);
+  }
+
+  /* End */
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("../assets/shared/icon-close.svg");
+  }
+
+  .hamburger[aria-expanded="true"] {}
+}
+@media (min-width: 35em) and (max-width: 55em) {
+  .primary-navigation a>[aria-hidden] {
+    display: none;
+  }
+}
+@media (min-width: 35em) {
+  .primary-navigation {
+    padding-block: 2rem;
+    padding-inline: clamp(3rem, 10vw, 10rem);
+  }
+}
+
+
+
+
+
+
+
+
+/*  
 .navbar {
   z-index: 999;
   display: flex;
@@ -56,7 +229,7 @@ body {
   width: 100%;
 }
 
-.navbar>.nav-section {
+ .navbar>.nav-section {
   padding: 2rem 3rem;
   display: flex;
   align-items: center;
@@ -68,6 +241,7 @@ body {
   justify-content: flex-start;
   flex-grow: 1;
 }
+
 
 .nav-section>a {
   font-size: 0.7rem;
@@ -84,13 +258,13 @@ body {
 
 #nav-link-section {
   gap: 4rem;
-}
+} 
 
 @media (max-width: 40rem) {
   #nav-social-section {
     display: none;
   }
-}
+}*/
 
 .section-home {
   display: grid;

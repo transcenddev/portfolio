@@ -324,6 +324,7 @@ body {
   text-align: center;
 }
 
+
 .project>a>img {
   opacity: 0.5;
   transition: all 0.5s;
@@ -332,6 +333,8 @@ body {
 .project>a>img:hover {
   opacity: 0.8;
 }
+
+
 
 .row {
   display: -ms-flexbox;

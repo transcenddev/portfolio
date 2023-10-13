@@ -316,6 +316,18 @@ body {
   }
 }
 
+@keyframes blinkTextCursor {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
 .section-project {
   height: 100%;
 }

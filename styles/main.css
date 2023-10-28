@@ -488,6 +488,8 @@ body {
 
 .footer {
   padding: 1rem;
-  font-size: x-small;
+  font-family: system-ui, sans-serif !important;
+  font-size: xx-small;
+  font-weight: 100;
   text-align: center;
 }
